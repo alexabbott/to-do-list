@@ -1,18 +1,5 @@
 source 'https://rubygems.org'
 
-# Add factory girl
-gem 'factory_girl_rails'
-
-group :development, :test do
-
-	#rspec gem
-	gem 'rspec-rails', '~> 3.0.0'
-
-	#add validation-association matchers
-	gem 'shoulda-matchers', require: false
-	
-end
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
@@ -37,6 +24,27 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+
+
+# Add factory girl
+gem 'factory_girl_rails'
+
+group :development, :test do
+
+	#rspec gem
+	gem 'rspec-rails', '~> 3.0.0'
+
+	#add validation-association matchers
+	gem 'shoulda-matchers', require: false
+
+end
+
+group :production do
+
+	#add gem for heroku to handle assets
+	gem 'rails_12factor', '0.0.2'
+
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
